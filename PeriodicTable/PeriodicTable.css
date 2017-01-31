@@ -1,0 +1,694 @@
+* {
+	text-align: center;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+html {
+	overflow: auto;
+	width: 1347px;
+}
+
+a:hover {
+	color: blue;
+}
+
+img {
+	visibility: hidden;
+	display: inline;
+	position: absolute;
+	margin-left: 70px auto;
+	margin-right: 70px auto;
+}
+
+body {
+	background-color: #eafeef;
+}
+
+p {
+    font-size: 13px;
+	margin-top: -40px;
+	letter-spacing: -1px;
+}
+
+h2 {
+	line-height: 60px;
+}
+
+.para {
+	font-size: 14px;
+	letter-spacing: 0px;
+	line-height: 20px;
+	text-align: justify;
+}
+
+em {
+	font-weight: bold;
+	font-size: 12px;
+	padding-right: 5px;
+}
+
+div {
+	display: inline;
+    box-shadow: none;
+	height: 70px;
+	width: 70px;
+	float:left;
+	line-height: 60px;
+	font-family: Trebuchet MS;
+	font-size: 30px;
+	/*transition: all 0.1s ease;
+	-webkit-transition: all 0.1s ease;
+	-moz-transition: all 0.1s ease;*/
+	letter-spacing: -2px;
+}
+
+div:hover div:not(.typesCont):hover {
+	cursor: pointer;
+	-moz-box-shadow: inset 0 0 6px #000000;
+	-webkit-box-shadow: inset 0 0 6px #000000;
+	box-shadow: inset 0 0 6px #000000;
+}
+
+.types {
+	visibility: visible;
+	position: absolute;
+	height: 35px;
+	width: 80px;
+	line-height: 15px;
+	left: 260px;
+	top: 50px;
+	letter-spacing: -1px;
+	font-size: 12px;
+}
+
+.modalDialog {
+	position: fixed;
+	font-family: Helvetica;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 99999;
+	background-color: rgba(0,0,0,0.8);
+	opacity:0;
+	-webkit-transition: opacity 200ms ease-in;
+	-moz-transition: opacity 200ms ease-in;
+	transition: opacity 200ms ease-in;
+	pointer-events: none;
+}
+
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.modalDialog > div {
+	width: 700px;
+	height: 330px;
+	font-family: Segoe UI;
+	position: relative;
+	margin-top: 10%;
+	margin-left: 25%;
+	padding: 5px 20px 13px 20px;
+	line-height: 30px;
+	letter-spacing: 1px;
+	border-radius: 10px;
+	background: #DCDCDC;
+}
+
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover { 
+	background-color: #00d9ff; 
+}
+
+#temperature {
+	position: absolute;
+	top: 100px;
+	height: 400px;
+	left: -30px;
+	writing-mode: bt-lr;
+	-webkit-appearance: slider-vertical;
+	margin: 18px 0;
+}
+
+#temperature::-webkit-slider-runnable-track {
+    width: 20px;
+    background: linear-gradient(#ff1a1a, #ff4d4d, #ffffff, #81d8d0, #b6c5e0);
+    border: none;
+    border-radius: 3px;
+}
+
+#temperature::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #d3d3d3;
+    margin-top: -4px;
+}
+
+#temperature:focus {
+    outline: none;
+}
+
+#amount {
+	margin-left: 0px;
+}
+
+#metals, #non_metals, #metalloids {
+	height: 80px;
+	border-radius: 10px;
+	font-size: 15px;
+	line-height: 0px;
+	letter-spacing: 0px;
+}
+
+#metals {
+	width: 325px;
+	padding: 15px;
+	margin-top: 15px;
+	margin-left: 235px;
+	background-color: #9faeb8;
+}
+
+#non_metals {
+	width: 170px;
+	padding: 15px;
+	margin-top: -110px;
+	margin-left: 600px;
+	background-color: #9faeb8;
+}
+
+#metalloids {
+	height: 30px;
+	width: 109px;
+	line-height: 30px;
+	top: 23px;
+	left: 847px;
+	background-color: #8ee39c;
+	transform: rotate(90deg);
+	transform-origin: left top 0;
+}
+
+#alkali_metals {
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	line-height: 30px;
+	background-color: #ffcc33;
+}
+
+#alkaline_earth_metals {
+	left: 340px;
+	background-color: #ffff64;
+}
+
+#transition_metals {
+	left: 420px;
+	background-color: #ddbbbb;
+}
+
+#post_transition_metals {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	left: 500px;
+	background-color: #abe3d5;
+}
+
+#other_non_metals {
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	left: 627px;
+	background-color: #4dff4d;
+}
+
+#halogens {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	line-height: 30px;
+	left: 707px;
+	background-color: #4bf1d5;
+}
+
+#noble_gases {
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	height: 25px;
+	line-height: 25px;
+	top: 85px;
+	left: 665px;
+	background-color: #89d3ff;
+}
+
+#lanths {
+	border-bottom-left-radius: 5px;
+	line-height: 25px;
+	top: 85px;
+	left: 340px;
+	height: 25px;
+	background-color: #ffc3a6;
+}
+
+#lanths_space {
+	margin-left: 210px;
+	margin-top: 247px;
+	font-size: 20px;
+	top: 800px;
+	background-color: #ffc3a6;
+}
+
+#acts {
+	border-bottom-right-radius: 5px;
+	line-height: 25px;
+	top: 85px;
+	left: 420px;
+	height: 25px;
+	background-color: #f0c6e2;
+}
+
+#acts_space {
+	margin-left: 210px;
+	font-size: 20px;
+	background-color: #f0c6e2;
+}
+
+.row4, .row5, .row6, .row7, .row8, .row9, .row10, .row11, .row12 > div:nth-child(1),
+ .row3 > div:nth-child(1) {
+ 	margin-top: 232px;
+}
+
+.row3 > div, .row4 > div, .row5 > div, .row6 > div, .row7 > div, .row8 > div,
+ .row9 > div, .row10 > div, .row11 > div, .row12 > div, .row13 > div,
+.row14 > div, .row15 > div, .row16 > div {
+	background-color: #ddbbbb;
+}
+
+.row1 > div {
+	background-color: #ffcc33;
+}
+
+.row1 > #lithium, .row2 > div:nth-child(1), .row13 > div:nth-child(1),
+.row14, .row15, .row16, .row17 {
+	margin-top: 92px;
+}
+
+ .row18 > div:nth-child(2)
+ {
+ 	margin-top: 22px;
+ }
+
+.row2 > div {
+	background-color: #ffff64;
+}
+
+.row17 > div {
+	background-color: #49f1d5;
+}
+
+.row18 > div {
+	background-color: #8bd3ff;
+}
+
+#hydrogen {
+	position: absolute;
+	background-color: #42ff42;
+	left: 78px;
+	top: 30px;
+}
+
+#helium {
+	position: relative;
+	background-color: #8bd3ff;
+	top: 22px;
+	/*right: 28px;*/
+}
+
+#carbon, #nitrogen, #oxygen, #phosphorus, #sulfur, #selenium {
+	background-color: #4fff4f;
+}
+
+#boron, #silicon, #germanium, #arsenic, #antimony, #tellurium, #polonium {
+	background-color: #8ee39c;
+}
+
+#aluminium, #gallium, #indium, #tin, #thalium, #lead, #bismuth, #ununtrium, #flerovium,
+#ununpentium, #livemorium {
+	background-color: #abe3d5;
+}
+
+.lanthanoids, .actinoids {
+	position: absolute;
+}
+
+.lanthanoids {
+	background-color: #ffc3a6;
+	top: 530px;
+	left: 220px;
+}
+
+.actinoids {
+	background-color: #f0c6e2;
+	top: 600px;
+	left: 220px;
+}
+
+#kelvinTemp, #celciusTemp, #fahrenheitTemp {
+	font-family: Trebuchet MS;
+	letter-spacing: 0;
+	font-size: 15px;
+	width: 40px;
+	left: 15px;
+}
+
+#kelvinTemp {
+	position: absolute;
+	top: 70px;
+}
+
+#celciusTemp {
+	position: absolute;
+	top: 50px;
+}
+
+#fahrenheitTemp {
+	position: absolute;
+	top: 30px;
+}
+
+#labelTemp {
+	position: absolute;
+	font-size: 15px;
+	letter-spacing: 0;
+	transform: rotate(270deg);
+	top: 300px;
+	left: -20px;
+}
+
+.hoverInfo {
+	position: absolute;
+	top: 140px;
+	left: 250px;
+	display: none;
+	height: 90px;
+	width: 90px; 
+}
+
+.amu {
+	line-height: 25px;
+}
+
+.propTable {
+	position: absolute;
+	text-align: left;
+	line-height: 10px;
+	/*padding-left: 20px;*/
+	border: 5px solid #42ff42;
+	border-radius: 10px;
+	height: 90px;
+	width: 240px;
+	background-color: #c6f7a6;
+	font-family: Trebuchet MS;
+	font-size: 13px;
+	left: 350px;
+	top: 140px;
+}
+
+#tableRight {
+	left: 590px;
+}
+
+#tableLeft {
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+#tableRight {
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+
+.readMore {
+	font-size: 15px;
+	line-height: 20px; 
+	text-decoration: underline;
+	target: blank;
+}
+
+.unknown {
+	background-color: #838877;
+}
+
+.tempLabel {
+	/*position: absolute;*/
+	
+}
+
+#solidLabel {
+	position: absolute;
+	left: 846px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	top: 140px;
+	background-color: #8b8b8b;
+	font-weight: bold;
+	font-size: 15px;
+	letter-spacing: 0px;
+	line-height: 25px;
+	height: 30px;
+	width: 60px;
+}
+
+#liquidLabel {
+	position: absolute;
+	left: 846px;
+	top: 170px;
+	background-color: #66b2ff;
+	font-weight: bold;
+	font-size: 15px;
+	letter-spacing: 0px;
+	line-height: 25px;
+	height: 30px;
+	width: 60px;
+}
+
+#gasLabel {
+	position: absolute;
+	left: 846px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	top: 200px;
+	background-color: #ff6666;
+	font-weight: bold;
+	font-size: 15px;
+	letter-spacing: 0px;
+	line-height: 25px;
+	height: 30px;
+	width: 60px;
+}
+
+new-div {
+	font-family: Trebuchet MS;
+	font-size: 30px;
+}
+
+.welcomeScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    filter:alpha(opacity=80);
+    -moz-opacity:0.8;
+    -khtml-opacity: 0.8;
+    opacity: 0.8;
+    z-index: 10000;
+}
+
+.welcomeButton {
+	position: absolute;
+	top: 60%;
+	right: 40%;
+	background-color: #62d07f;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color: #ffffff;
+	font-family:Trebuchet MS;
+	font-size:17px;
+	padding:20px 100px;
+	opacity: 1;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+	z-index: 999999;
+}
+
+.welcomeButton:hover {
+	color: white;
+	background-color: #44c767;
+}
+
+.welcomeButton:active {
+	background-color: #35b156;
+}
+
+.heading {
+	position: absolute;
+	font-size: 60px;
+	top: 10%;
+	left: 24%;
+	z-index: 999999;
+}
+
+.bySubmitted {
+	position: absolute;
+	top: 45%;
+	left: 10%;
+	z-index: 999999;
+}
+
+.toSubmitted{
+	position: absolute;
+	top: 45%;
+	right: 7%;
+	z-index: 999999;
+}
+
+.preText {
+	font-size: 25px;
+	font-family: Trebuchet MS;
+}
+
+.tooltip{
+    display: inline;
+    position: relative;
+}
+
+.tooltip:hover:after{
+    background: #333;
+    background: rgba(0,0,0,.8);
+    border-radius: 5px;
+    bottom: -50px;
+    color: #fff;
+    content: attr(title);
+    left: 20%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: absolute;
+    z-index: 98;
+    width: 220px;
+}
+
+.faqIcon {
+	position: relative;
+	top: -80px;
+	right: 70px;
+	font-family: Trebuchet MS;
+	border: 5px solid #5BC0DE;
+	border-radius: 5px;
+	background-color: #5BC0DE;
+	padding: 5px;
+}
+
+#infoElements {
+	border: 1px solid black;
+	display: inline;
+}
+
+.properties {
+	cursor: pointer;
+}
+
+#infoHydrogen, #infoHelium, #infoLithium, #infoSodium, #infoPotassium, #infoRubidium, #infoCesium, #infoFrancium, #infoBeryllium, #infoMagnesium,
+#infoCalcium, #infoStrontium, #infoBarium, #infoRadium, #infoScandium, #infoYttrium, #infoTitanium, #infoZirconium, #infoHafnium, #infoRutherfordium,
+#infoVanadium, #infoNiobium, #infoTantalum, #infoDubnium, #infoChromium, #infoMolybdenum, #infoTungsten, #infoSeaborgium, #infoManganese,
+#infoTechnitium, #infoRhenium, #infoBohrium, #infoIron, #infoRuthenium, #infoOsmium, #infoHassium, #infoCobalt, #infoRhodium, #infoIridium, #infoMeitnerium,
+#infoNickel, #infoPalladium, #infoPlatinum, #infoDarmstadtium, #infoCopper, #infoSilver, #infoGold, #infoRoentgenium, #infoZinc, #infoCadmium,
+#infoMercury, #infoCopernicium, #infoBoron, #infoAluminium, #infoGallium, #infoIndium, #infoThalium, 
+#infoUnuntrium, #infoCarbon, #infoSilicon, #infoGermanium, #infoTin, #infoLead, #infoFlerovium, #infoNitrogen, #infoPhosphorus, #infoArsenic, 
+#infoAntimony, #infoBismuth, #infoUnunpentium, #infoOxygen, #infoSulfur, #infoSelenium, #infoTellurium, #infoPolonium, #infoLivemorium, 
+#infoFluorine, #infoChlorine, #infoBromine, #infoIodine, #infoAstatine, #infoUnunseptium,
+#infoNeon, #infoArgon, #infoKrypton, #infoXenon, #infoRadon, #infoUnunoctium, #infoLanthanum, #infoCerium, #infoPraseodymium, #infoNeodymium, 
+#infoPromethium, #infoSamarium, #infoEuropium,#infoGadolinium, #infoTerbium, #infoDysprosium, #infoHolmium, #infoErbium, #infoThulium, #infoYtterbium, 
+#infoLutetium, #infoActinium, #infoThorium, #infoProtactinium, #infoUranium, #infoNeptunium, #infoPlutonium, 
+#infoAmericium, #infoCurium, #infoBerkilium, #infoCalifornium, #infoEinsteinium, #infoFermium, #infoMendelevium, #infoNobelium, #infoLawrencium {
+	display: none;
+}
+
+#infoHydrogen, #infoOxygen, #infoCarbon, #infoNitrogen, #infoPhosphorus, #infoSulfur, #infoSelenium {
+	background-color: #42ff42;
+}
+
+#infoLithium, #infoSodium, #infoPotassium, #infoRubidium, #infoCesium, #infoFrancium {
+	background-color: #ffcc33;
+}
+
+#infoBeryllium, #infoMagnesium, #infoCalcium, #infoStrontium, #infoBarium, #infoRadium {
+	background-color: #ffff64;
+}
+
+#infoScandium, #infoYttrium, #infoTitanium, #infoZirconium, #infoHafnium, #infoRutherfordium, #infoVanadium, #infoNiobium, #infoTantalum, #infoDubnium,
+#infoChromium, #infoMolybdenum, #infoTungsten, #infoSeaborgium, #infoManganese, #infoTechnitium, #infoRhenium, #infoBohrium,
+#infoIron, #infoRuthenium, #infoOsmium, #infoHassium, #infoCobalt, #infoRhodium, #infoIridium, #infoMeitnerium,
+#infoNickel, #infoPalladium, #infoPlatinum, #infoDarmstadtium, #infoCopper, #infoSilver, #infoGold, #infoRoentgenium, #infoZinc, #infoCadmium,
+#infoMercury, #infoCopernicium {
+	background-color: #ddbbbb;
+}
+
+#infoAluminium, #infoGallium, #infoIndium, #infoThalium, #infoUnuntrium, #infoTin, #infoLead, #infoFlerovium, 
+#infoUnunpentium, #infoBismuth, #infoLivemorium {
+	background-color: #abe3d5;
+}
+
+#infoFluorine, #infoChlorine, #infoBromine, #infoIodine, #infoAstatine, #infoUnunseptium {
+	background-color: #4bf1d5;
+}
+
+#infoHelium, #infoNeon, #infoArgon, #infoKrypton, #infoXenon, #infoRadon, #infoUnunoctium {
+	background-color: #89d3ff;
+}
+
+#infoBoron, #infoSilicon, #infoGermanium, #infoArsenic, #infoAntimony, #infoTellurium, #infoPolonium {
+	background-color: #8ee39c;
+}
+
+#infoLanthanum, #infoCerium, #infoPraseodymium, #infoNeodymium, #infoPromethium, #infoSamarium, #infoEuropium, #infoGadolinium,
+#infoTerbium, #infoDysprosium, #infoHolmium, #infoErbium, #infoThulium, #infoYtterbium, #infoLutetium {
+	background-color: #ffc3a6;
+}
+
+#infoActinium, #infoThorium, #infoProtactinium, #infoUranium, #infoNeptunium, #infoPlutonium, #infoAmericium, #infoCurium, #infoBerkilium,
+#infoCalifornium, #infoEinsteinium, #infoFermium, #infoMendelevium, #infoNobelium, #infoLawrencium {
+	background-color: #f0c6e2;
+}
+
+#mpTitle:hover, #bpTitle:hover, #densTitle:hover, #valTitle:hover, #radTitle:hover, #enegTitle:hover, #affinityTitle:hover, #heatTitle:hover {
+	color: blue;
+}
